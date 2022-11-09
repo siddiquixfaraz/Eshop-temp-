@@ -99,6 +99,7 @@
             android:layout_margin="5dp"
             android:background="#00000000"
             android:elevation="0dp"
+            android:textColor="@color/black"
             android:fontFamily="@font/antic"
             android:text="FORGET PASSWORD?" />
 
@@ -108,10 +109,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
             android:layout_marginBottom="5dp"
-            android:background="#000"
+            android:background="@drawable/go_btn"
             android:text="GO"
             android:onClick="isUser"
-            android:textColor="@color/white" />
+            android:textColor="@color/white"
+            tools:ignore="OnClick" />
 
         <Button
             android:id="@+id/signUp"

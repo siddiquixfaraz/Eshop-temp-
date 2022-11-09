@@ -3,7 +3,7 @@
 
     <style name="Theme.EShop" parent="Theme.MaterialComponents.Light.NoActionBar">
         <!-- Primary brand color. -->
-        <item name="colorPrimary">#F4511E</item>
+        <item name="colorPrimary">@color/black</item>
         <item name="colorPrimaryVariant">#3949AB</item>
         <item name="colorOnPrimary">@color/white</item>
         <!-- Secondary brand color. -->
