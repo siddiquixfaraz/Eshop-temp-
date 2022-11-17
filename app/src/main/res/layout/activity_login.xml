@@ -111,9 +111,7 @@
             android:layout_marginBottom="5dp"
             android:background="@drawable/go_btn"
             android:text="GO"
-            android:onClick="isUser"
-            android:textColor="@color/white"
-            tools:ignore="OnClick" />
+            android:textColor="@color/white" />
 
         <Button
             android:id="@+id/signUp"
@@ -128,5 +126,15 @@
             android:textColor="@color/black" />
 
     </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/btn_skip"
+        android:text="skip"
+        android:layout_gravity="end"
+        android:layout_marginTop="60dp"
+        />
+
 
 </LinearLayout>
