@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".screens.SignUp"
-    >
+    tools:context=".screens.SignUp">
+
 <LinearLayout
     android:layout_width="match_parent"
     android:layout_height="match_parent"
@@ -19,7 +19,6 @@
         android:text="WELCOME"
         android:paddingTop="40dp"
         android:textSize="40sp"
-
         android:fontFamily="@font/bungee"
         android:layout_marginTop="-40dp"/>
     <TextView
@@ -36,70 +35,123 @@
         android:layout_marginTop="20dp"
         android:layout_marginBottom="20dp">
 
-        <com.google.android.material.textfield.TextInputLayout
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/name"-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Full Name">-->
+
+<!--           <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="text"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/name"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Full Name">
+            android:hint="Full Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
 
-           <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
 
-        <com.google.android.material.textfield.TextInputLayout
+
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/username"-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:counterMaxLength="15"-->
+<!--            android:hint="UserName">-->
+
+<!--        <com.google.android.material.textfield.TextInputEditText-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:inputType="text"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/username"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:counterMaxLength="15"
-            android:hint="UserName">
+            android:hint="User Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
 
-        <com.google.android.material.textfield.TextInputEditText
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="E-Mail">-->
 
-        <com.google.android.material.textfield.TextInputLayout
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/email"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="text" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+
+        <EditText
             android:id="@+id/email"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="E-Mail">
+            android:hint="E-Mail"
+            android:inputType="text"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="text"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/phonenumber"-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Phone Number">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="number"/>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/phonenumber"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Phone Number">
+            android:hint="Phone Number"
+            android:inputType="number"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            app:passwordToggleEnabled="true"-->
+<!--            android:hint="Password">-->
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="number"/>
-        </com.google.android.material.textfield.TextInputLayout>
-        <com.google.android.material.textfield.TextInputLayout
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:id="@+id/password"-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:inputType="textPassword" />-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/password"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:passwordToggleEnabled="true"
-            android:hint="Password">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:inputType="textPassword"/>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:hint="Password"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
     </LinearLayout>
 
     <Button
@@ -107,17 +159,15 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="@color/black"
-        android:onClick="regUser"
-        android:text="GO"
+        android:text="create"
         android:textColor="@color/white"
-        android:textSize="18sp"
-        tools:ignore="OnClick" />
+        android:textSize="18sp" />
     <Button
         android:id="@+id/signup"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:background="#00000000"
-        android:text="ALREADY HAVE AN ACCOUNT? SIGNUP"/>
+        android:text="ALREADY HAVE AN ACCOUNT? SIGN IN"/>
 
     <TextView
         android:layout_width="wrap_content"

@@ -63,34 +63,51 @@
         android:layout_marginBottom="20dp"
         android:orientation="vertical">
 
-        <com.google.android.material.textfield.TextInputLayout
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/username"-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Username">-->
+
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            </com.google.android.material.textfield.TextInputEditText>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/username"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:hint="Username">
+            android:hint="User Name"
+            android:inputType="text"
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
 
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-            </com.google.android.material.textfield.TextInputEditText>
+<!--        <com.google.android.material.textfield.TextInputLayout-->
+<!--            android:id="@+id/password"-->
+<!--            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"-->
+<!--            android:layout_width="match_parent"-->
+<!--            android:layout_height="wrap_content"-->
+<!--            android:hint="Password"-->
+<!--            app:passwordToggleEnabled="true">-->
 
-        </com.google.android.material.textfield.TextInputLayout>
-
-        <com.google.android.material.textfield.TextInputLayout
+<!--            <com.google.android.material.textfield.TextInputEditText-->
+<!--                android:layout_width="match_parent"-->
+<!--                android:layout_height="wrap_content">-->
+<!--            </com.google.android.material.textfield.TextInputEditText>-->
+<!--        </com.google.android.material.textfield.TextInputLayout>-->
+        <EditText
             android:id="@+id/password"
-            style="@style/ThemeOverlay.Material3.AutoCompleteTextView.OutlinedBox"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:hint="Password"
-            app:passwordToggleEnabled="true">
-
-            <com.google.android.material.textfield.TextInputEditText
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content">
-
-            </com.google.android.material.textfield.TextInputEditText>
-        </com.google.android.material.textfield.TextInputLayout>
+            android:padding="10dp"
+            android:background="@drawable/edittextbox"
+            android:layout_margin="4dp"
+            />
 
         <Button
             android:layout_width="150dp"

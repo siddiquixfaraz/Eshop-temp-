@@ -1,6 +1,7 @@
 package com.example.e_shop.adapters;
 
 import android.content.Context;
+import android.content.Intent;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -12,6 +13,7 @@ import com.bumptech.glide.Glide;
 import com.example.e_shop.R;
 import com.example.e_shop.databinding.ItemProductBinding;
 import com.example.e_shop.model.Product;
+import com.example.e_shop.screens.ProductDetailActivity;
 
 import java.util.ArrayList;
 
@@ -40,6 +42,18 @@ public class ProductAdapter extends RecyclerView.Adapter<ProductAdapter.ProductV
 
         holder.binding.label.setText(product.getName());
         holder.binding.price.setText("$ "+ product.getPrice());
+
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent intent = new Intent(context, ProductDetailActivity.class);
+                intent.putExtra("name" , product.getName());
+                intent.putExtra("image" , product.getImage());
+                intent.putExtra("id" , product.getId());
+                intent.putExtra("price" , product.getPrice());
+                context.startActivity(intent);
+            }
+        });
     }
 
     @Override
