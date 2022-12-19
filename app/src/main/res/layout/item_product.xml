@@ -39,10 +39,11 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:ellipsize="end"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="sans-serif-light"
                 android:maxLines="2"
                 android:text="Nike"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textSize="16sp"
                 android:textStyle="bold" />
 
@@ -52,9 +53,10 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="5dp"
                 android:layout_marginBottom="5dp"
-                android:fontFamily="@font/roboto_bold"
+                android:fontFamily="sans-serif-light"
                 android:text="10000"
                 android:textAlignment="center"
+                android:textColor="@color/black"
                 android:textStyle="bold" />
         </LinearLayout>
     </androidx.cardview.widget.CardView>

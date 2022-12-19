@@ -29,5 +29,4 @@
         app:lottie_repeatCount="3"
         app:lottie_rawRes="@raw/loading"/>
 
-
 </LinearLayout>

@@ -13,10 +13,35 @@
         android:theme="@style/Theme.EShop"
         android:usesCleartextTraffic="true">
         <activity
+            android:name=".screens.SearchActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EShop.ActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".screens.CategoryActivity"
+            android:exported="false"
+            android:theme="@style/Theme.EShop.ActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
+            android:name=".screens.PaymentActivity"
+            android:exported="false"
+            android:label="Payment"
+            android:theme="@style/Theme.EShop.ActionBar">
+            <meta-data
+                android:name="android.app.lib_name"
+                android:value="" />
+        </activity>
+        <activity
             android:name=".screens.CheckoutActivity"
+            android:exported="false"
             android:label="Checkout"
-            android:theme="@style/Theme.EShop.ActionBar"
-            android:exported="false">
+            android:theme="@style/Theme.EShop.ActionBar">
             <meta-data
                 android:name="android.app.lib_name"
                 android:value="" />
@@ -25,7 +50,7 @@
             android:name=".screens.CartActivity"
             android:exported="true"
             android:label="Shopping Cart"
-            android:theme="@style/Theme.EShop.ActionBar"></activity>
+            android:theme="@style/Theme.EShop.ActionBar" />
         <activity
             android:name=".screens.SplashScreen"
             android:exported="true">

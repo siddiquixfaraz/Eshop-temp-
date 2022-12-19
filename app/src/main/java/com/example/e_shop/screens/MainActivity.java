@@ -1,6 +1,7 @@
 package com.example.e_shop.screens;
 
 import android.app.Activity;
+import android.content.Intent;
 import android.os.Bundle;
 import android.widget.GridLayout;
 
@@ -22,6 +23,7 @@ import com.example.e_shop.databinding.ActivityMainBinding;
 import com.example.e_shop.model.Category;
 import com.example.e_shop.model.Product;
 import com.example.e_shop.utility.Constants;
+import com.mancj.materialsearchbar.MaterialSearchBar;
 
 import org.imaginativeworld.whynotimagecarousel.model.CarouselItem;
 import org.json.JSONArray;
@@ -47,6 +49,24 @@ public class MainActivity extends AppCompatActivity {
         binding = ActivityMainBinding.inflate(getLayoutInflater());
         setContentView(binding.getRoot());
 
+        binding.searchBar.setOnSearchActionListener(new MaterialSearchBar.OnSearchActionListener() {
+            @Override
+            public void onSearchStateChanged(boolean enabled) {
+
+            }
+
+            @Override
+            public void onSearchConfirmed(CharSequence text) {
+                Intent intent = new Intent(MainActivity.this, SearchActivity.class);
+                intent.putExtra("query", text.toString());
+                startActivity(intent);
+            }
+
+            @Override
+            public void onButtonClicked(int buttonCode) {
+
+            }
+        });
 
         initCategory();
         initProducts();
@@ -55,14 +75,15 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void initSlider() {
-        binding.carousel.addData(new CarouselItem(
-                "https://tutorials.mianasad.com/ecommerce/uploads/news/Genuine%20Leather.jpg",""));
-        binding.carousel.addData(new CarouselItem(
-                "https://tutorials.mianasad.com/ecommerce/uploads/news/Handicraft%20Brass%20Items.jpg",""));
-        binding.carousel.addData(new CarouselItem(
-                "https://tutorials.mianasad.com/ecommerce/uploads/news/Gems%20and%20Jewellery.jpg",""));
-        binding.carousel.addData(new CarouselItem(
-                "https://static.vecteezy.com/system/resources/previews/000/205/356/original/vector-diwali-festival-offers-voucher-banner-design-background.jpg",""));
+//        binding.carousel.addData(new CarouselItem(
+//                "https://tutorials.mianasad.com/ecommerce/uploads/news/Genuine%20Leather.jpg",""));
+//        binding.carousel.addData(new CarouselItem(
+//                "https://tutorials.mianasad.com/ecommerce/uploads/news/Handicraft%20Brass%20Items.jpg",""));
+//        binding.carousel.addData(new CarouselItem(
+//                "https://tutorials.mianasad.com/ecommerce/uploads/news/Gems%20and%20Jewellery.jpg",""));
+//        binding.carousel.addData(new CarouselItem(
+//                "https://static.vecteezy.com/system/resources/previews/000/205/356/original/vector-diwali-festival-offers-voucher-banner-design-background.jpg",""));
+        getRecentOffers();
     }
 
     void initCategory(){
@@ -126,24 +147,6 @@ public class MainActivity extends AppCompatActivity {
 
     void initProducts(){
         products = new ArrayList<>();
-//        products.add(new Product("Dilmah Ceylon Black Tea",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1666773461638.png",
-//                "stocked",12,30,12,1));
-//        products.add(new Product("Realme 9 Pro+",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1665267687191.jpg",
-//                "stocked",12,30,12,1));
-//        products.add(new Product("Dilmah Ceylon Black Tea",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1666773461638.png",
-//                "stocked",12,30,12,1));
-//        products.add(new Product("Dilmah Ceylon Black Tea",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1666773461638.png",
-//                "stocked",12,30,12,1));
-//        products.add(new Product("Dilmah Ceylon Black Tea",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1666773461638.png",
-//                "stocked",12,30,12,1));
-//        products.add(new Product("Dilmah Ceylon Black Tea",
-//                "https://tutorials.mianasad.com/ecommerce/uploads/product/1666773461638.png",
-//                "stocked",12,30,12,1));
         productAdapter = new ProductAdapter(this,products);
 
         getProducts();
@@ -196,4 +199,30 @@ public class MainActivity extends AppCompatActivity {
         });
         queue.add(request);
     }
+
+    void getRecentOffers() {
+        RequestQueue queue = Volley.newRequestQueue(this);
+
+        StringRequest request = new StringRequest(Request.Method.GET, Constants.GET_OFFERS_URL, response -> {
+            try {
+                JSONObject object = new JSONObject(response);
+                if(object.getString("status").equals("success")) {
+                    JSONArray offerArray = object.getJSONArray("news_infos");
+                    for(int i =0; i < offerArray.length(); i++) {
+                        JSONObject childObj =  offerArray.getJSONObject(i);
+                        binding.carousel.addData(
+                                new CarouselItem(
+                                        Constants.NEWS_IMAGE_URL + childObj.getString("image"),
+                                        childObj.getString("title")
+                                )
+                        );
+                    }
+                }
+            } catch (JSONException e) {
+                e.printStackTrace();
+            }
+        }, error -> {});
+        queue.add(request);
+    }
+
 }

@@ -47,7 +47,7 @@
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-                    android:drawableLeft="@drawable/ic_arrow_left_black_48dp"
+                    android:drawableLeft="@drawable/folderimg"
                     android:drawablePadding="5dp"
                     android:text="2 item(s)"
                     android:textSize="11sp" />

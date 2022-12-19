@@ -49,16 +49,21 @@ public class SignUp extends AppCompatActivity {
                         }
                     }
                 });
-
             }
         });
 
-        skip.setOnClickListener(new View.OnClickListener() {
+        binding.btnSkip.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 startActivity(new Intent(SignUp.this,MainActivity.class));
             }
         });
+//        skip.setOnClickListener(new View.OnClickListener() {
+//            @Override
+//            public void onClick(View view) {
+//                startActivity(new Intent(SignUp.this,MainActivity.class));
+//            }
+//        });
 
         binding.signup.setOnClickListener(new View.OnClickListener() {
             @Override
